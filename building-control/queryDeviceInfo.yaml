@@ -1,0 +1,8 @@
+- name: 获取模型id为2016505的设备（VAV空调）主要运行状态信息和参数
+  request:
+    method: post
+    url: http://wxhl.test.geointech.cn:10001/building-control/modelInteraction/queryDeviceInfo
+  headers:
+    Content-Type: application/json;charset=utf8
+  params:
+    modelId: 2016505

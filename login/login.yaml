@@ -1,0 +1,38 @@
+- name: 用户名密码正确，登录成功
+  request:
+    method: post
+    url: http://wxhl.test.geointech.cn:10001/auth/login
+  headers:
+    Content-Type: application/json;charset=utf8
+  params:
+    username: HLadmin
+    password: HLadmin
+  result:
+    code: 200
+    msg: "登录成功"
+
+#- name: 用户名为空，登录失败
+#  request:
+#    method: post
+#    url: http://wxhl.test.geointech.cn:10001/auth/login
+#    headers:
+#      Content-Type: application/json;charset=utf8
+#  params:
+#    username: ""
+#    password: HLadmin
+#  result:
+#    code: 500
+#    msg: "用户/密码必须填写"
+#
+#- name: 密码为空，登录失败
+#  request:
+#    method: post
+#    url: http://wxhl.test.geointech.cn:10001/auth/login
+#    headers:
+#      Content-Type: application/json;charset=utf8
+#  params:
+#    username: HLadmin
+#    password: ""
+#  result:
+#    code: 500
+#    msg: "用户/密码必须填写"
