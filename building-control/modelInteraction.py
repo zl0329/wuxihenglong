@@ -1,5 +1,6 @@
 import pytest
 
+from common.send_request import SendRequest
 from common.yaml_util import read_testcase_yaml, read_yaml
 
 
@@ -14,3 +15,13 @@ class TestControlApi:
             "Content-Type": queryDeviceInfo["headers"]["Content-Type"],
             "token": read_yaml("access_token")
         }
+        res = SendRequest().all_send_request(
+            method=method,
+            url=url,
+            json=queryDeviceInfo["params"]["modelId"],
+            headers=headers
+        )
+        result = res.json()
+        print(result)
+        if result["code"] == 200:
+            print("请求成功" + "\n")
