@@ -1,0 +1,8 @@
+- name: 获取CTR-AC-AHU-0135设备组态点位数据
+  request:
+    method: post
+    url: http://wxhl.test.geointech.cn:10001/building-control/modelInteraction/querySystemDeviceList
+  headers:
+    Content-Type: application/json;charset=utf8
+  params:
+    assetCode: CTR-AC-AHU-0135

@@ -18,10 +18,17 @@ class TestControlApi:
         res = SendRequest().all_send_request(
             method=method,
             url=url,
-            json=queryDeviceInfo["params"]["modelId"],
+            json=queryDeviceInfo["params"],
             headers=headers
         )
         result = res.json()
         print(result)
         if result["code"] == 200:
             print("请求成功" + "\n")
+        else:
+            print("请求失败" + "\n" + result["msg"])
+
+    # 获取组态点位数据
+    @pytest.mark.parametrize("querySystemDeviceList", read_testcase_yaml("./querySystemDeviceList.yaml"))
+    def test_querySystemDeviceList(self, querySystemDeviceList):
+        print(querySystemDeviceList["name"])
